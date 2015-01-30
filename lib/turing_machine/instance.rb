@@ -7,7 +7,7 @@ module TuringMachine
       @instruction = Instruction.new(instructions)
       @state = StateRegister.new(initial_state)
       @tape = Tape.new
-      @sequence = 0
+      @sequence = 1
     end
 
     def picture
