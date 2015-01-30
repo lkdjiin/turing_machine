@@ -29,13 +29,29 @@ describe Instance do
     expect(instance.picture).to eq expected
   end
 
-  it 'tells if the machine is halted' do
-    instructions = {
-      {symbol: '0', state: 'A'} => {symbol: '1', move: 'R', next_state: 'HALT'}
-    }
-    instance = Instance.new(instructions, initial_state)
-    expect(instance.halted?).to eq false
-    instance.proceed
-    expect(instance.halted?).to eq true
+  context 'when halted' do
+
+    it 'tells if the machine is halted' do
+      instructions = {
+        {symbol: '0', state: 'A'} => {symbol: '1', move: 'R', next_state: 'HALT'}
+      }
+      instance = Instance.new(instructions, initial_state)
+      expect(instance.halted?).to eq false
+      instance.proceed
+      expect(instance.halted?).to eq true
+    end
+
+    it 'outputs especially' do
+      instructions = {
+        {symbol: '0', state: 'A'} => {symbol: '1', move: 'R', next_state: 'HALT'}
+      }
+      instance = Instance.new(instructions, initial_state)
+      instance.proceed
+      expected = "1 0000100000 HALT\n" +
+                 "       ^"
+      expect(instance.picture).to eq expected
+    end
+
   end
+
 end

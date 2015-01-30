@@ -11,7 +11,7 @@ module TuringMachine
     end
 
     def picture
-      "#{@sequence} #{@tape} #{@state.current} -> #{instr_to_s}\n  " +
+      "#{@sequence} #{@tape} #{@state.current}#{instr_to_s}\n  " +
       ' ' * @tape.index + '^'
     end
 
@@ -47,9 +47,9 @@ module TuringMachine
 
     def instr_to_s
       if halted?
-        'halted'
+        ''
       else
-        "" + action[:symbol] + action[:move] + action[:next_state]
+        " -> " + action[:symbol] + action[:move] + action[:next_state]
       end
     end
   end
