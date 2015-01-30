@@ -16,11 +16,10 @@ module TuringMachine
     end
 
     def proceed
-      @sequence += 1
-      current = @instruction.for(symbol: @tape.head, state: @state.current)
-      @tape.head = current[:symbol]
-      current[:move] == 'L' ? @tape.shift_left : @tape.shift_right
-      @state.change(current[:next_state])
+      current = action
+      update_sequence
+      update_tape(current)
+      update_state(current)
     end
 
     def halted?
@@ -29,12 +28,28 @@ module TuringMachine
 
     private
 
+    def update_sequence
+      @sequence += 1
+    end
+
+    def update_tape(current_action)
+      @tape.head = current_action[:symbol]
+      current_action[:move] == 'L' ? @tape.shift_left : @tape.shift_right
+    end
+
+    def update_state(current_action)
+      @state.change(current_action[:next_state])
+    end
+
+    def action
+      @instruction.for(symbol: @tape.head, state: @state.current)
+    end
+
     def instr_to_s
       if halted?
         'halted'
       else
-        current = @instruction.for(symbol: @tape.head, state: @state.current)
-        "" + current[:symbol] + current[:move] + current[:next_state]
+        "" + action[:symbol] + action[:move] + action[:next_state]
       end
     end
   end
