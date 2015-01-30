@@ -1,5 +1,6 @@
 module TuringMachine
 
+  # Public: The tape of a Turing machine, combined with the head.
   class Tape
 
     def initialize

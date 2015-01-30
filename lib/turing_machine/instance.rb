@@ -1,5 +1,6 @@
 module TuringMachine
 
+  # Public: An instance of a Turing machine.
   class Instance
 
     def initialize(instructions, initial_state)

@@ -1,5 +1,6 @@
 module TuringMachine
 
+  # Public: The state register of a Turing machine.
   class StateRegister
 
     def initialize(state)

@@ -1,5 +1,6 @@
 module TuringMachine
 
+  # Public: The instruction table of a Turing machine.
   class Instruction
 
     def initialize(table)
