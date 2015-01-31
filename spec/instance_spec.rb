@@ -18,7 +18,7 @@ describe Instance do
     instance = Instance.new(instructions, initial_state)
     expected = "  1 0000000000 A -> 1RB\n" +
                "        ^"
-    expect(instance.picture).to eq expected
+    expect(instance.to_s).to eq expected
   end
 
   it 'computes a step' do
@@ -26,7 +26,7 @@ describe Instance do
     instance.proceed
     expected = "  2 0000100000 B -> 1LA\n" +
                "         ^"
-    expect(instance.picture).to eq expected
+    expect(instance.to_s).to eq expected
   end
 
   context 'when halted' do
@@ -49,7 +49,7 @@ describe Instance do
       instance.proceed
       expected = "  2 0000100000 HALT\n" +
                  "         ^"
-      expect(instance.picture).to eq expected
+      expect(instance.to_s).to eq expected
     end
 
   end

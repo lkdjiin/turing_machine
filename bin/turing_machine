@@ -18,7 +18,7 @@ initial_state = 'A'
 instance = Instance.new(instructions, initial_state)
 
 loop do
-  puts instance.picture
+  puts instance.to_s
   break if instance.halted?
   instance.proceed
 end

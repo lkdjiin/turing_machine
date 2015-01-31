@@ -10,7 +10,7 @@ module TuringMachine
       @sequence = 1
     end
 
-    def picture
+    def to_s
       "#{'%3d' % @sequence} #{@tape} #{@state}#{instr_to_s}\n    " +
       ' ' * @tape.index + '^'
     end
