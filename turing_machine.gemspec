@@ -6,11 +6,11 @@ require 'turing_machine/version'
 Gem::Specification.new do |spec|
   spec.name          = "turing_machine"
   spec.version       = TuringMachine::VERSION
-  spec.authors       = ["lkdjiin"]
+  spec.authors       = ["Xavier Nayrac"]
   spec.email         = ["xavier.nayrac@gmail.com"]
-  spec.summary       = %q{Busy beaver Turing machine}
-  spec.description   = %q{Busy beaver Turing machine}
-  spec.homepage      = ""
+  spec.summary       = %q{Turing machine}
+  spec.description   = %q{Turing machine}
+  spec.homepage      = "http://lkdjiin.github.com/turing_machine/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
