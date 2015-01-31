@@ -7,8 +7,8 @@ module TuringMachine
       @table = table
     end
 
-    def for(symbol:, state:)
-      @table[{symbol: symbol, state: state}]
+    def for(symbol, state)
+      @table[[symbol, state]]
     end
 
   end

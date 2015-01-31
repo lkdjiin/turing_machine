@@ -42,7 +42,7 @@ module TuringMachine
     end
 
     def action
-      @instruction.for(symbol: @tape.head, state: @state.current)
+      @instruction.for(@tape.head, @state.current)
     end
 
     def instr_to_s
