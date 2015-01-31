@@ -11,7 +11,7 @@ module TuringMachine
     end
 
     def picture
-      "#{'%3d' % @sequence} #{@tape} #{@state.current}#{instr_to_s}\n    " +
+      "#{'%3d' % @sequence} #{@tape} #{@state}#{instr_to_s}\n    " +
       ' ' * @tape.index + '^'
     end
 

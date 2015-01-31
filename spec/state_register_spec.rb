@@ -10,6 +10,10 @@ describe StateRegister do
     expect(state.current).to eq 'A'
   end
 
+  it 'has a string representation' do
+    expect("#{state}").to eq 'A'
+  end
+
   it 'could change the state' do
     state.change('B')
     expect(state.current).to eq 'B'

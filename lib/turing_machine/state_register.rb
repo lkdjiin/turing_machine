@@ -15,6 +15,9 @@ module TuringMachine
       @state = new_state
     end
 
+    def to_s
+      @state.to_s
+    end
   end
 
 end
