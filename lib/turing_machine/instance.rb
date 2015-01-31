@@ -33,7 +33,7 @@ module TuringMachine
     end
 
     def update_tape(current_action)
-      @tape.head = current_action[:symbol]
+      @tape.head = current_action[:write]
       current_action[:move] == 'L' ? @tape.shift_left : @tape.shift_right
     end
 
@@ -49,7 +49,7 @@ module TuringMachine
       if halted?
         ''
       else
-        " -> " + action[:symbol] + action[:move] + action[:next_state]
+        " -> " + action[:write] + action[:move] + action[:next_state]
       end
     end
   end

@@ -3,12 +3,12 @@ require 'spec_helper'
 include TuringMachine
 
 instructions = {
-  ['0', 'A'] => {symbol: '1', move: 'R', next_state: 'B'},
-  ['1', 'A'] => {symbol: '1', move: 'L', next_state: 'C'},
-  ['0', 'B'] => {symbol: '1', move: 'L', next_state: 'A'},
-  ['1', 'B'] => {symbol: '1', move: 'R', next_state: 'B'},
-  ['0', 'C'] => {symbol: '1', move: 'L', next_state: 'B'},
-  ['1', 'C'] => {symbol: '1', move: 'R', next_state: 'HALT'},
+  ['0', 'A'] => {write: '1', move: 'R', next_state: 'B'},
+  ['1', 'A'] => {write: '1', move: 'L', next_state: 'C'},
+  ['0', 'B'] => {write: '1', move: 'L', next_state: 'A'},
+  ['1', 'B'] => {write: '1', move: 'R', next_state: 'B'},
+  ['0', 'C'] => {write: '1', move: 'L', next_state: 'B'},
+  ['1', 'C'] => {write: '1', move: 'R', next_state: 'HALT'},
 }
 
 initial_state = 'A'
@@ -33,7 +33,7 @@ describe Instance do
 
     it 'tells if the machine is halted' do
       instructions = {
-        ['0', 'A'] => {symbol: '1', move: 'R', next_state: 'HALT'}
+        ['0', 'A'] => {write: '1', move: 'R', next_state: 'HALT'}
       }
       instance = Instance.new(instructions, initial_state)
       expect(instance.halted?).to eq false
@@ -43,7 +43,7 @@ describe Instance do
 
     it 'outputs especially' do
       instructions = {
-        ['0', 'A'] => {symbol: '1', move: 'R', next_state: 'HALT'}
+        ['0', 'A'] => {write: '1', move: 'R', next_state: 'HALT'}
       }
       instance = Instance.new(instructions, initial_state)
       instance.proceed
