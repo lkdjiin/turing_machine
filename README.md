@@ -1,26 +1,22 @@
-# TuringMachine
+TuringMachine
+=============
 
-TODO: Write a gem description
+> A man provided with paper, pencil, and rubber, and subject to strict discipline, is in effect a universal machine.
+> - Alan Turing
+
+Currently, in version 0.0.2, you could just run the hardcoded 3 states busy beaver
+algorithm. There is nothing to tweak.
+I wish to be able to run any instruction sets in a very near future.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'turing_machine'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it with:
 
     $ gem install turing_machine
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ turing_machine
 
 ## Contributing
 
@@ -29,3 +25,12 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## License
+
+MIT, see LICENSE.TXT
+
+## Questions and/or Comments
+
+Feel free to email [Xavier Nayrac](mailto:xavier.nayrac@gmail.com)
+with any questions, or contact me on [twitter](https://twitter.com/lkdjiin).
