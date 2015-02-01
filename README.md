@@ -4,6 +4,8 @@ TuringMachine
 > A man provided with paper, pencil, and rubber, and subject to strict discipline, is in effect a universal machine.
 > - Alan Turing
 
+![Photo of Alan Turing](alan-turing2.jpg)
+
 Currently, in version 0.0.2, you could just run the hardcoded 3 states busy beaver
 algorithm. There is nothing to tweak.
 I wish to be able to run any instruction sets in a very near future.
