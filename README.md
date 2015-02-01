@@ -6,9 +6,7 @@ TuringMachine
 
 ![Photo of Alan Turing](alan-turing2.jpg)
 
-Currently, in version 0.0.2, you could just run the hardcoded 3 states busy beaver
-algorithm. There is nothing to tweak.
-I wish to be able to run any instruction sets in a very near future.
+A Turing machine that can run (almost) any instruction set.
 
 ## Installation
 
@@ -18,7 +16,11 @@ Install it with:
 
 ## Usage
 
-    $ turing_machine
+Look at some well-known instruction set in [instruction_sets](instruction_sets)
+or create your own. Then run the Turing machine with, for example: 
+
+    $ turing_machine instruction_sets/busy_beaver_1
+
 
 ## Contributing
 
