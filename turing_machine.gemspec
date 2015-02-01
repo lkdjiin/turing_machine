@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = TuringMachine::VERSION
   spec.authors       = ["Xavier Nayrac"]
   spec.email         = ["xavier.nayrac@gmail.com"]
-  spec.summary       = %q{Turing machine}
-  spec.description   = %q{Turing machine}
+  spec.summary       = %q{A Turing machine}
+  spec.description   = %q{A Turing machine that can run your instruction set}
   spec.homepage      = "http://lkdjiin.github.com/turing_machine/"
   spec.license       = "MIT"
 
