@@ -4,8 +4,8 @@ module TuringMachine
   class Tape
 
     def initialize
-      @symbols = Array.new(10) { '0' }
-      @index = 4
+      @symbols = Array.new(40) { '0' }
+      @index = 19
     end
 
     attr_reader :index

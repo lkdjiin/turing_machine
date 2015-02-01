@@ -40,7 +40,7 @@ describe Tape do
   end
 
   it 'has a string representation' do
-    expect("#{tape}").to eq '0000000000'
+    expect("#{tape}").to eq '0' * 40
   end
 
 end

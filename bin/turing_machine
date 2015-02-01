@@ -4,19 +4,26 @@ require 'turing_machine'
 
 include TuringMachine
 
-instructions = {
-  ['0', 'A'] => {write: '1', move: 'R', next_state: 'B'},
-  ['1', 'A'] => {write: '1', move: 'L', next_state: 'C'},
-  ['0', 'B'] => {write: '1', move: 'L', next_state: 'A'},
-  ['1', 'B'] => {write: '1', move: 'R', next_state: 'B'},
-  ['0', 'C'] => {write: '1', move: 'L', next_state: 'B'},
-  ['1', 'C'] => {write: '1', move: 'R', next_state: 'HALT'},
-}
+if ARGV[0].nil?
+  exit(1)
+else
+  filename = ARGV[0]
+end
+
+if File.exist?(filename)
+  raw_instructions = IO.read(filename)
+else
+  exit(2)
+end
+
+parser = InstructionsParser.new
+instructions = parser.parse(raw_instructions)
 
 initial_state = 'A'
 
 instance = Instance.new(instructions, initial_state)
 
+# This should be testable.
 loop do
   puts instance.to_s
   break if instance.halted?
