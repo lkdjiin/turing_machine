@@ -1,0 +1,8 @@
+0 A => 1 R B
+1 A => 1 L B
+0 B => 1 L A
+1 B => 0 L C
+0 C => 1 R HALT
+1 C => 1 L D
+0 D => 1 R D
+1 D => 0 R A
