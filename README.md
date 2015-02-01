@@ -16,11 +16,14 @@ Install it with:
 
 ## Usage
 
-Look at some well-known instruction set in [instruction_sets](instruction_sets)
-or create your own. Then run the Turing machine with, for example: 
+Look at some well-known instruction sets in [instruction_sets](instruction_sets)
+or create your own. Then run the Turing machine with, for example:
 
     $ turing_machine instruction_sets/busy_beaver_1
 
+Look at the
+[InstructionsParser class](lib/turing_machine/instructions_parser.rb) for a
+documentation of the instruction format.
 
 ## Contributing
 
