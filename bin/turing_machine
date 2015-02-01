@@ -16,8 +16,8 @@ else
   exit(2)
 end
 
-parser = InstructionsParser.new
-instructions = parser.parse(raw_instructions)
+parser = InstructionsParser.new(raw_instructions)
+instructions = parser.parse
 
 initial_state = 'A'
 
