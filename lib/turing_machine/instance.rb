@@ -4,7 +4,7 @@ module TuringMachine
   class Instance
 
     def initialize(instructions, initial_state)
-      @instruction = Instruction.new(instructions)
+      @instructions = Instructions.new(instructions)
       @state = StateRegister.new(initial_state)
       @tape = Tape.new
       @sequence = 1
@@ -42,7 +42,7 @@ module TuringMachine
     end
 
     def action
-      @instruction.for(@tape.head, @state.current)
+      @instructions.get(@tape.head, @state.current)
     end
 
     def instr_to_s

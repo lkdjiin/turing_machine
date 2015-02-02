@@ -16,7 +16,9 @@ module TuringMachine
   #
   # So each instruction is :
   #
+  # ```
   # scanned-symbol  current-state  =>  symbol-to-write  move  next-state
+  # ```
   class InstructionsParser
 
     def initialize(raw_instructions)
