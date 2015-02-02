@@ -6,7 +6,7 @@ TuringMachine
 
 ![Photo of Alan Turing](alan-turing2.jpg)
 
-A Turing machine that can run (almost) any instruction set.
+A Turing machine that can run (almost) (one day maybe) (I hope) any instruction set.
 
 ## Installation
 
