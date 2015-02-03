@@ -29,6 +29,19 @@ describe Instance do
     expect(instance.to_s).to eq expected
   end
 
+  describe 'null movement' do
+    it 'does not move the head' do
+      instructions = {
+        ['0', 'A'] => {write: '1', move: 'N', next_state: 'HALT'}
+      }
+      instance = Instance.new(instructions, initial_state)
+      instance.proceed
+      expected = "  2 0000000000000000000100000000000000000000 HALT\n" +
+                 "                       ^"
+      expect(instance.to_s).to eq expected
+    end
+  end
+
   context 'when halted' do
 
     it 'tells if the machine is halted' do

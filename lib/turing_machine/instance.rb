@@ -34,7 +34,8 @@ module TuringMachine
 
     def update_tape(current_action)
       @tape.head = current_action[:write]
-      current_action[:move] == 'L' ? @tape.shift_left : @tape.shift_right
+      @tape.shift_left if current_action[:move] == 'L'
+      @tape.shift_right if current_action[:move] == 'R'
     end
 
     def update_state(current_action)
