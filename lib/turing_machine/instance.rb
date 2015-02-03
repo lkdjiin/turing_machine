@@ -33,7 +33,7 @@ module TuringMachine
     end
 
     def update_tape(current_action)
-      @tape.head = current_action[:write]
+      @tape.head = current_action[:write] unless current_action[:write] == 'N'
       @tape.shift_left if current_action[:move] == 'L'
       @tape.shift_right if current_action[:move] == 'R'
     end

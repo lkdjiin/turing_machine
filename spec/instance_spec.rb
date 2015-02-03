@@ -42,6 +42,20 @@ describe Instance do
     end
   end
 
+  describe 'null write' do
+    it 'does not write the current cell' do
+      instructions = {
+        ['0', 'A'] => {write: 'N', move: 'N', next_state: 'HALT'}
+      }
+      instance = Instance.new(instructions, initial_state)
+      instance.proceed
+      expected = "  2 0000000000000000000000000000000000000000 HALT\n" +
+                 "                       ^"
+      expect(instance.to_s).to eq expected
+
+    end
+  end
+
   context 'when halted' do
 
     it 'tells if the machine is halted' do
