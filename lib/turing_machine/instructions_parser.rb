@@ -19,6 +19,12 @@ module TuringMachine
   # ```
   # scanned-symbol  current-state  =>  symbol-to-write  move  next-state
   # ```
+  #
+  # `symbol-to-write` is usually `1` or `0`. Note that `N` is a special
+  # symbol meaning «write nothing».
+  #
+  # `move` could be either `L` for left, `R` for right, or `N` for no
+  # movement.
   class InstructionsParser
 
     def initialize(raw_instructions)
