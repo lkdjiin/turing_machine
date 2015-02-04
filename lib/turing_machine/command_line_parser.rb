@@ -20,6 +20,11 @@ module TuringMachine
           puts opts
           exit
         end
+
+        opts.on_tail("--version", "Show version") do
+          puts VERSION
+          exit
+        end
       end
 
       opt_parser.parse!(args)
