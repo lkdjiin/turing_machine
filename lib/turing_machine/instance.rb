@@ -3,10 +3,10 @@ module TuringMachine
   # Public: An instance of a Turing machine.
   class Instance
 
-    def initialize(instructions, initial_state)
+    def initialize(instructions, initial_state, tape = Tape.new)
       @instructions = Instructions.new(instructions)
       @state = StateRegister.new(initial_state)
-      @tape = Tape.new
+      @tape = tape
       @sequence = 1
     end
 

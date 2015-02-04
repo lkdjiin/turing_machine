@@ -4,6 +4,8 @@ require 'turing_machine'
 
 include TuringMachine
 
+options = CommandLineParser.parse(ARGV)
+
 if ARGV[0].nil?
   exit(1)
 else
@@ -21,7 +23,7 @@ instructions = parser.parse
 
 initial_state = 'A'
 
-instance = Instance.new(instructions, initial_state)
+instance = Instance.new(instructions, initial_state, Tape.new(options.tape))
 
 # This should be testable.
 loop do

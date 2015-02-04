@@ -3,8 +3,10 @@ module TuringMachine
   # Public: The tape of a Turing machine, combined with the head.
   class Tape
 
-    def initialize
-      @symbols = [ '0' ]
+    BLANK_SYMBOL = '0'
+
+    def initialize(data = BLANK_SYMBOL)
+      @symbols = data.scan(/./)
       @index = 0
     end
 
@@ -21,7 +23,7 @@ module TuringMachine
     # Public: Move the head to the left.
     def shift_left
       if @index == 0
-        @symbols.unshift('0')
+        @symbols.unshift(BLANK_SYMBOL)
       else
         @index -= 1
       end
@@ -29,7 +31,7 @@ module TuringMachine
 
     # Public: Move the head to the right.
     def shift_right
-      @symbols.push('0') if @index == @symbols.size - 1
+      @symbols.push(BLANK_SYMBOL) if @index == @symbols.size - 1
       @index += 1
     end
 
