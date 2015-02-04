@@ -16,16 +16,16 @@ initial_state = 'A'
 describe Instance do
   it 'produces an output' do
     instance = Instance.new(instructions, initial_state)
-    expected = "  1 0000000000000000000000000000000000000000 A -> 1RB\n" +
-               "                       ^"
+    expected = "  1 0 A -> 1RB\n" +
+               "    ^"
     expect(instance.to_s).to eq expected
   end
 
   it 'computes a step' do
     instance = Instance.new(instructions, initial_state)
     instance.proceed
-    expected = "  2 0000000000000000000100000000000000000000 B -> 1LA\n" +
-               "                        ^"
+    expected = "  2 10 B -> 1LA\n" +
+               "     ^"
     expect(instance.to_s).to eq expected
   end
 
@@ -36,8 +36,8 @@ describe Instance do
       }
       instance = Instance.new(instructions, initial_state)
       instance.proceed
-      expected = "  2 0000000000000000000100000000000000000000 HALT\n" +
-                 "                       ^"
+      expected = "  2 1 HALT\n" +
+                 "    ^"
       expect(instance.to_s).to eq expected
     end
   end
@@ -49,8 +49,8 @@ describe Instance do
       }
       instance = Instance.new(instructions, initial_state)
       instance.proceed
-      expected = "  2 0000000000000000000000000000000000000000 HALT\n" +
-                 "                       ^"
+      expected = "  2 0 HALT\n" +
+                 "    ^"
       expect(instance.to_s).to eq expected
 
     end
@@ -74,8 +74,8 @@ describe Instance do
       }
       instance = Instance.new(instructions, initial_state)
       instance.proceed
-      expected = "  2 0000000000000000000100000000000000000000 HALT\n" +
-                 "                        ^"
+      expected = "  2 10 HALT\n" +
+                 "     ^"
       expect(instance.to_s).to eq expected
     end
 
