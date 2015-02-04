@@ -4,8 +4,8 @@ module TuringMachine
   class Tape
 
     def initialize
-      @symbols = Array.new(40) { '0' }
-      @index = 19
+      @symbols = [ '0' ]
+      @index = 0
     end
 
     attr_reader :index
@@ -18,11 +18,18 @@ module TuringMachine
       @symbols[@index] = symbol
     end
 
+    # Public: Move the head to the left.
     def shift_left
-      @index -= 1
+      if @index == 0
+        @symbols.unshift('0')
+      else
+        @index -= 1
+      end
     end
 
+    # Public: Move the head to the right.
     def shift_right
+      @symbols.push('0') if @index == @symbols.size - 1
       @index += 1
     end
 
