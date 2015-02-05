@@ -21,9 +21,13 @@ or create your own. Then run the Turing machine with, for example:
 
     $ turing_machine instruction_sets/busy_beaver_1
 
-Look at the
+To initialize the tape with some data, use `--tape`:
+
+    $ turing_machine instruction_sets/copy --tape 111
+
+Finally, look at the
 [InstructionsParser class](lib/turing_machine/instructions_parser.rb) for a
-documentation of the instruction format.
+documentation of the instruction format if you want to write your own.
 
 ## Contributing
 
