@@ -4,10 +4,12 @@ require 'turing_machine'
 
 include TuringMachine
 
-options = CommandLineParser.parse(ARGV)
+cli_parser = CommandLineParser.new(ARGV)
+options = cli_parser.parse
 
 if ARGV[0].nil?
-  exit(1)
+  puts cli_parser.help
+  exit
 else
   filename = ARGV[0]
 end
