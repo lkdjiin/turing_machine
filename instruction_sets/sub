@@ -1,0 +1,12 @@
+0 A => N R A
+1 A => 0 R B
+0 B => N R C
+1 B => N R B
+0 C => N R C
+1 C => 0 R F
+0 D => N L D
+1 D => N L E
+0 E => N R A
+1 E => N L E
+0 F => N N HALT
+1 F => N L D

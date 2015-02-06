@@ -1,0 +1,4 @@
+0 A => N R A
+1 A => 0 R B
+0 B => 1 N HALT
+1 B => N R B
