@@ -29,6 +29,15 @@ Finally, look at the
 [InstructionsParser class](lib/turing_machine/instructions_parser.rb) for a
 documentation of the instruction format if you want to write your own.
 
+## Todo
+
+[ ] Play several instruction sets following each other. For example, to double
+    a number : `$ turing_machine --tape 111 copy add`.
+[ ] Allow any initial state. Currently only `A` is working.
+[ ] Deal with parsing errors in an instruction set.
+[ ] Find out a way to play the «5 states busy beaver». It outputs 4098 "1"s with
+    8191 "0"s interspersed in 47,176,870 steps.
+
 ## Contributing
 
 1. Fork it ( https://github.com/lkdjiin/turing_machine/fork )
